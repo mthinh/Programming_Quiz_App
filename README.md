@@ -1,6 +1,6 @@
 # programming_quiz_app
 
-A new Flutter project.
+An app made for developers to review their knowledge, for recruiters to test their candidates
 
 ## Getting Started
 
