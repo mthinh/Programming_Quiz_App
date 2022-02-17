@@ -1,3 +1,4 @@
+import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:programming_quiz_app/constants.dart';
@@ -10,8 +11,8 @@ class LanguageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Container(
-        height: 200,
-        width: width * 0.42,
+        height: 40.h,
+        width: 40.w,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class AppColors {
   static const Color midNight = Color(0xff000339);
@@ -12,7 +13,7 @@ class AppColors {
 
 class AppTextStyle {
   static final h1 = GoogleFonts.lato(
-    fontSize: 36,
+    fontSize: 27.sp,
     color: AppColors.midNight,
     wordSpacing: 5,
     letterSpacing: 1,
@@ -20,7 +21,7 @@ class AppTextStyle {
   );
 
   static final h2 = GoogleFonts.lato(
-    fontSize: 27,
+    fontSize: 22.sp,
     color: AppColors.midNight,
     wordSpacing: 2,
     letterSpacing: 1,

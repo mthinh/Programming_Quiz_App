@@ -1,3 +1,5 @@
+import 'package:sizer/sizer.dart';
+
 import 'package:flutter/material.dart';
 import 'package:programming_quiz_app/screens/welcome_screen/welcome_screen.dart';
 
@@ -11,14 +13,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        splashColor: Colors.transparent,
-      ),
-      home: const WelcomeScreen(),
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          splashColor: Colors.transparent,
+        ),
+        home: const WelcomeScreen(),
+      );
+    });
   }
 }

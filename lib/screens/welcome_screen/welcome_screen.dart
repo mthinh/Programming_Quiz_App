@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 import 'package:programming_quiz_app/constants.dart';
 import 'package:programming_quiz_app/screens/welcome_screen/widget/bottom_section.dart';
 import 'package:programming_quiz_app/screens/welcome_screen/widget/languages_list.dart';
@@ -15,6 +14,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final statusBarHeight = MediaQuery.of(context).padding.top;
     final bottom = MediaQuery.of(context).padding.bottom;
+    final aspectRatio = MediaQuery.of(context).devicePixelRatio;
 
     return SafeArea(
         top: false,
@@ -22,7 +22,8 @@ class WelcomeScreen extends StatelessWidget {
         child: Scaffold(
           backgroundColor: AppColors.snow,
           body: Padding(
-              padding: EdgeInsets.only(top: statusBarHeight, bottom: bottom),
+              padding: EdgeInsets.only(
+                  top: statusBarHeight, bottom: bottom == 0 ? 20 : bottom),
               child: Stack(children: [
                 Column(children: [
                   const Spacer(),
@@ -42,7 +43,10 @@ class WelcomeScreen extends StatelessWidget {
                 Positioned(
                     top: 0,
                     right: 0,
-                    child: SvgPicture.asset("assets/svg/welcome_screen.svg"))
+                    child: SvgPicture.asset(
+                      "assets/svg/welcome_screen.svg",
+                      height: 20.h,
+                    ))
               ])),
         ));
   }
