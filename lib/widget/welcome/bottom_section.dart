@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:programming_quiz_app/constants.dart';
+import 'package:sizer/sizer.dart';
 
 class Dots extends StatelessWidget {
   const Dots({Key? key}) : super(key: key);
@@ -23,7 +24,8 @@ class Dots extends StatelessWidget {
 }
 
 class BottomSection extends StatelessWidget {
-  const BottomSection({Key? key}) : super(key: key);
+  final Function onPressed;
+  const BottomSection({Key? key, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +40,7 @@ class BottomSection extends StatelessWidget {
             width: 160,
             height: 60,
             child: TextButton(
-                onPressed: () {
-                  print('yay');
-                },
+                onPressed: () => onPressed(),
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20))),
@@ -49,7 +49,7 @@ class BottomSection extends StatelessWidget {
                 child: Text(
                   "Let's start",
                   style: AppTextStyle.h2.copyWith(
-                      fontSize: 22,
+                      fontSize: 14.sp,
                       color: AppColors.white,
                       fontWeight: FontWeight.w700),
                 )),

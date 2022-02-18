@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:programming_quiz_app/constants.dart';
-import 'package:programming_quiz_app/screens/welcome_screen/widget/language_item.dart';
+import 'package:programming_quiz_app/widget/welcome/widgets.dart';
 
 class LanguagesList extends StatelessWidget {
   const LanguagesList({Key? key}) : super(key: key);

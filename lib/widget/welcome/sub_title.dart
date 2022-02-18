@@ -13,7 +13,7 @@ class SubTitle extends StatelessWidget {
           alignment: Alignment.topLeft,
           child: RichText(
             text:
-                TextSpan(text: "What do you want to ", style: AppTextStyle.h2),
+                TextSpan(text: "What do you want to ", style: AppTextStyle.h3),
           ),
         ),
       ),
@@ -22,7 +22,7 @@ class SubTitle extends StatelessWidget {
         child: Align(
           alignment: Alignment.topLeft,
           child: RichText(
-            text: TextSpan(text: "learn?", style: AppTextStyle.h2),
+            text: TextSpan(text: "learn?", style: AppTextStyle.h3),
           ),
         ),
       )

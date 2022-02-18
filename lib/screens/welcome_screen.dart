@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:programming_quiz_app/screens/home_screen.dart';
+import 'package:programming_quiz_app/widget/welcome/widgets.dart';
 import 'package:sizer/sizer.dart';
 import 'package:programming_quiz_app/constants.dart';
-import 'package:programming_quiz_app/screens/welcome_screen/widget/bottom_section.dart';
-import 'package:programming_quiz_app/screens/welcome_screen/widget/languages_list.dart';
-import 'package:programming_quiz_app/screens/welcome_screen/widget/main_title.dart';
-import 'package:programming_quiz_app/screens/welcome_screen/widget/sub_title.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+
+  navigateToHomeScreen(context) {
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const HomeScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
     final statusBarHeight = MediaQuery.of(context).padding.top;
     final bottom = MediaQuery.of(context).padding.bottom;
-    final aspectRatio = MediaQuery.of(context).devicePixelRatio;
-
     return SafeArea(
         top: false,
         bottom: false,
@@ -38,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                     ]),
                   ),
                   const LanguagesList(),
-                  const BottomSection(),
+                  BottomSection(onPressed: () => navigateToHomeScreen(context)),
                 ]),
                 Positioned(
                     top: 0,
